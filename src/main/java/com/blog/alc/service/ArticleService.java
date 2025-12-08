@@ -1,4 +1,4 @@
 package com.blog.alc.service;
 
-public class BlogService {
+public class ArticleService {
 }

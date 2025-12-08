@@ -1,4 +1,4 @@
 package com.blog.alc.controller;
 
-public class BlogController {
+public class ArticleController {
 }
