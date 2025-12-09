@@ -2,10 +2,8 @@ package com.blog.alc.service;
 
 import com.blog.alc.model.Article;
 import com.blog.alc.repository.ArticleRepository;
-import org.antlr.v4.runtime.tree.pattern.ParseTreePattern;
 import org.springframework.stereotype.Service;
 
-import java.lang.ScopedValue;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +22,11 @@ import java.util.List;
         listArticle.add(new Article(56L,"EcoSystem","Patric",  "Presentation des ecosytemes"));
     }
 
-    public List<Article> getArticle() {
+    public List<Article> getListArticleExemple() {
+        return listArticle;
+    }
+
+    public List<Article> getArticles() {
         return articleRepository.findAll();
     }
 
@@ -39,7 +41,7 @@ import java.util.List;
     public Article getArticleByID(Long id) {
         return articleRepository.findById(id)
                 .orElseThrow(
-                        ()-> new IllegalArgumentException("software Engineer " +id+" not found")
+                        ()-> new IllegalArgumentException("article " +id+" not found")
                 );
     }
 

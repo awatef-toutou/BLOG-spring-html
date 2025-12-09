@@ -2,13 +2,9 @@ package com.blog.alc.controller;
 
 import com.blog.alc.model.Article;
 import com.blog.alc.service.ArticleService;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ArticleController {
@@ -22,10 +18,7 @@ public class ArticleController {
 
     @GetMapping("/")
     public String getIndex(Model model) {
-        model.addAttribute("id", article.getId());
-        model.addAttribute("titre", article.getTitre());
-        model.addAttribute("auteur", article.getAuteur());
-        model.addAttribute("contenu", article.getContenu());
+        model.addAttribute("listArticle", articleService.getArticles());
         return "index";
     }
 
@@ -42,6 +35,12 @@ public class ArticleController {
         return "detail";
     }
 
+ @PostMapping("/nouveau")
+    public String addArcticle(@ModelAttribute Model model, Article article)
+ {
+    articleService.createANewArticle(article);
+     return "redirect:/";
+ }
 
 
 }
