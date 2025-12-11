@@ -3,11 +3,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Détails</title>
 </head>
 <body>
-<p th:text="${article.id}"></p>
-<p th:text="${article.auteur}"></p>
-<p th:text="${article.contenu}"></p>
+<p th:text="${article.titre}"></p><br>
+<p th:text="${article.contenu}"></p><br>
+
+<a href="/nouveau"><button>New</button></a>
 </body>
 </html>

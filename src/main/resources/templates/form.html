@@ -2,18 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Formulaire</title>
 </head>
 <body>
-<form th:action="@{/add-article}" th:object="${article}" method="post">
 
+<div>
+<form th:action="@{/nouveau}" th:object="${article}" method="post">
+<!--           adress de l'action    type d objet    la maniere de la methode -->
     <label for="titre">Titre : </label>
-    <input type="text"th:field="*{titre}" id="titre">
+    <input type="text"th:field="*{titre}" id="titre"><br>
     <label for="auteur">auteur : </label>
-    <input type="text"th:field="*{auteur}" id="auteur" >
+    <input type="text"th:field="*{auteur}" id="auteur" ><br>
     <label for="contenu">contenu : </label>
-    <input type="text"th:field="*{contenu}" id="contenu" >
-    <a th:href="/"><button type="submit">Envoyer</button></a>
+    <input type="text"th:field="*{contenu}" id="contenu" ><br>
+    <a th:href="@{/}"><button type="submit">Envoyer</button></a>
+
 </form>
+</div>
+
 </body>
 </html>

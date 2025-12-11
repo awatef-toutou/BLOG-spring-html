@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="a:${listArticle}">
+    <div>
+        <p>L'article n°: <span th:text="${a.id}"> </span></p>
+        <p>le titre :<span th:text="${a.titre}"></span></p>
+        <p>le contenu : <span th:text="${a.contenu}"></span></p><br><br>
+    </div>
+</div>
+<div>
+    <a href="/"><button>Mon blog</button></a>
+    <a href="/nouveau"><button>New</button></a>
+</div>
+</body>
+</html>

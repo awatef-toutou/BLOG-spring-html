@@ -16,14 +16,6 @@ import java.util.List;
     public ArticleService(ArticleRepository articleRepository)
     {
         this.articleRepository = articleRepository;
-
-        listArticle.add(new Article(12L,"Top 10","Franc",  "les dix meilleurs livres"));
-        listArticle.add(new Article(34L,"TNews","Marie",  "les nouvelles "));
-        listArticle.add(new Article(56L,"EcoSystem","Patric",  "Presentation des ecosytemes"));
-    }
-
-    public List<Article> getListArticleExemple() {
-        return listArticle;
     }
 
     public List<Article> getArticles() {
@@ -34,7 +26,8 @@ import java.util.List;
     { for (Article a : listArticle) {
         if (a.getId() == id)
             return a;
-    }return null;
+        }
+        return null;
     }
 
 
@@ -45,19 +38,19 @@ import java.util.List;
                 );
     }
 
-    public void createANewArticle(Article article) {
+    public void createANewArticale(Article article) {
         articleRepository.save(article);
     }
 
-    public void modifyArticle(Article update) {
+    public void modifyArticale(Article update) {
         getArticleByID(update.getId());
-       articleRepository.save(update);
+        articleRepository.save(update);
     }
 
-    public void deleteArticle(Long id) {
+    public void deleteArticale(Long id) {
         articleRepository.deleteById(id);
-
     }
+
     public List<Article> getArticleByAuthor(String auteur) {
         return articleRepository.findByAuteur(auteur);
     }

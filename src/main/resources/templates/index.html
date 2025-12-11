@@ -4,22 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Article</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 <body>
 
-<h2>Ma liste des Articles</h2>
-<div>****************************************************</div>
+<h2>Mon blog</h2>
+
 <div th:each="a:${listArticle}">
-    <p>***********************************************</p>
     <div>
-        <p>Id du article:<span th:text="${a.id}"></span></p>
-        <p>le titre de l'article:<span th:text="${a.titre}"></span></p>
-        <p>l'auteur de l'article:<span th:text="${a.auteur}"></span></p>
-        <p>le contenu de l'article est:<span th:text="${a.contenu}"></span></p>
-
-        <a th:href="@{/detail/{id}(id=${a.id})}"> Details de l'article</a>
-
+        <p>L'article n°: <span th:text="${a.id}"></span></p>
+        <p>le titre : <span th:text="${a.titre}"></span></p>
+        <p>l'auteur : <span th:text="${a.auteur}"></span></p>
+        <p>le contenu : <span th:text="${a.contenu}"></span></p>
+        <a th:href="@{/detail/{id}(id=${a.id})}">lire l'article</a>
     </div>
+</div>
+<div>
+    <p>pour créer un nouveau article</p><br>
+    <a href="/nouveau"><button>New</button></a>
 </div>
 </body>
 </html>
